@@ -1,0 +1,4 @@
+php artisan make:migration update_password_to_users_table --table=users// make the password nullable
+
+
+composer require doctrine/dbal
