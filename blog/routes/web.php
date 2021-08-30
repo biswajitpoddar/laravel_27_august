@@ -18,3 +18,4 @@ Route::get('/', function () {
 });
 
 Route::view('users', 'livewire.home');
+Route::view('posts', 'livewire.posts');

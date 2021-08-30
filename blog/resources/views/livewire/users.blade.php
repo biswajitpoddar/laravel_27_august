@@ -9,9 +9,7 @@
         <div class="alert alert-success" style="margin-top:30px;">x
 
           {{ session('message') }}
-
         </div>
-
     @endif
 
     <table class="table table-bordered mt-5">

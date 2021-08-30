@@ -15,9 +15,16 @@ class Users extends Component
     public function render()
     {
 
-        $this->users = User::all();
+        // $this->users = User::all();
+        $this->users = User::orderBy('id','desc')->get();
 
-        return view('livewire.users');
+        return view('livewire.users')->extends('layouts.app');
+
+    }
+
+    public function alertSuccess()
+    {
+        $this->dispatchBrowserEvent('alert', ['type' => 'success',  'message' => 'User Created Successfully!']);
 
     }
 
@@ -46,9 +53,9 @@ class Users extends Component
         session()->flash('message', 'Users Created Successfully.');
 
         $this->resetInputFields();
-
+        $this->alertSuccess();
+        // $this->dispatchBrowserEvent('alert', ['type' => 'success',  'message' => 'User Created Successfully!']);
         $this->emit('userStore'); // Close model to using to jquery
-
     }
 
     public function edit($id)

@@ -1,6 +1,6 @@
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
 
-	Open Form
+	Create Users
 
 </button>
 
@@ -15,7 +15,7 @@
 
             <div class="modal-header">
 
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Create Users</h5>
 
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 

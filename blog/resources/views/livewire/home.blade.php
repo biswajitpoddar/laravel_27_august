@@ -15,6 +15,12 @@
 
     @livewireStyles
 
+    <script>
+        var timestamp = '{{ Session::get('message');}}';
+        alert(timestamp);
+        alert("hello\ world");
+    </script>
+
 </head>
 
 <body>
@@ -34,7 +40,9 @@
                     </div>
 
                     <div class="card-body">
-
+                    
+                       
+                    
                         @if (session()->has('message'))
 
                             <div class="alert alert-success">
