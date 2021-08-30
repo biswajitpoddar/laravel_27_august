@@ -1,6 +1,6 @@
 <div>
 
-    @include('livewire.create')
+    @include('livewire.createpost')
 
     @include('livewire.update')
 
@@ -54,15 +54,15 @@
 
             @endforeach
 
-            
+
         </tbody>
 
     </table> --}}
-   
+
     @foreach ( $posts as $value )
     <div>{{$value->id}}  hello</div>
     @endforeach
-    {{ $posts->links() }} 
+    {{ $posts->links() }}
 
-   
+
 </div>
