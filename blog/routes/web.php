@@ -17,5 +17,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__ . '/auth.php';
+
 Route::view('users', 'livewire.home');
-Route::view('posts', 'livewire.posts');
+
+Route::view('posts', 'livewire.show-posts');
