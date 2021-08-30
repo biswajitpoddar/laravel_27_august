@@ -6,11 +6,10 @@ use App\Models\Post;
 use Livewire\Component;
 use Livewire\WithPagination;
 
-
 class ShowPosts extends Component
 {
     use WithPagination;
-    public  $name, $email, $user_id;
+    public $posts, $title, $body, $post_id, $user_id;
 
     public $updateMode = false;
 
@@ -20,38 +19,44 @@ class ShowPosts extends Component
         // $this->users = User::all();
         //  $this->posts = Post::orderBy('id','desc')->get();
         //   return view('livewire.show-posts');
-          return view('livewire.show-posts',['posts' => Post::orderBy('id','desc')->paginate(5)]);
-        //  return view('livewire.show-posts', ['posts' => Post::paginate(10)]);
+
+        // $this->posts = Post::orderBy('id', 'desc')->get();
+        // return view('livewire.show-posts');
+
+        return view('livewire.show-posts', [$posts => Post::orderBy('id', 'desc')->paginate(5)]);
+
+        //  return view('livewire.show-posts', [$posts => Post::paginate(10)]);
 
     }
 
     private function resetInputFields()
     {
 
-        $this->name = '';
+        $this->title = '';
 
-        $this->email = '';
+        $this->body = '';
 
     }
 
     public function store()
     {
-
+        $this->user_id = 'sdfasdf';
         $validatedDate = $this->validate([
 
-            'name' => 'required',
+            'title' => 'required',
 
-            'email' => 'required|email',
+            'body' => 'required',
+            'user_id' => 'required',
 
         ]);
 
-        User::create($validatedDate);
+        Post::create($validatedDate);
 
-        session()->flash('message', 'Users Created Successfully.');
+        session()->flash('message', 'Post Created Successfully.');
 
         $this->resetInputFields();
 
-        $this->emit('userStore'); // Close model to using to jquery
+        $this->emit('postStore'); // Close model to using to jquery
 
     }
 
@@ -126,4 +131,3 @@ class ShowPosts extends Component
     }
 
 }
-
