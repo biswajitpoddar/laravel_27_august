@@ -36,3 +36,6 @@ https://techvblogs.com/blog/laravel-livewire-crud-tutorial
 
 https://www.nicesnippets.com/blog/laravel-livewire-crud-with-bootstrap-modal-example
 
+node js error can be solved by the command below in the command prompt and press enter
+npm set registry http://registry.npmjs.org/
+
