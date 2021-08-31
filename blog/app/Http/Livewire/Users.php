@@ -16,15 +16,16 @@ class Users extends Component
     {
 
         // $this->users = User::all();
-        $this->users = User::orderBy('id','desc')->get();
+        $this->users = User::orderBy('id', 'desc')->get();
 
-        return view('livewire.users')->extends('layouts.app');
+        // return view('livewire.users')->extends('layouts.app');
+        return view('livewire.users');
 
     }
 
     public function alertSuccess()
     {
-        $this->dispatchBrowserEvent('alert', ['type' => 'success',  'message' => 'User Created Successfully!']);
+        $this->dispatchBrowserEvent('alert', ['type' => 'success', 'message' => 'User Created Successfully!']);
 
     }
 

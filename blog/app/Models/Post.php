@@ -12,7 +12,8 @@ class Post extends Model
     protected $fillable = [
         'title',
         'body',
-        'password',
+        'user_id',
+
     ];
     public function comment()
     {

@@ -1,4 +1,5 @@
 <?php
+//namespace Illuminate\Database\Eloquent\Collection;
 
 namespace App\Http\Livewire;
 
@@ -9,24 +10,25 @@ use Livewire\WithPagination;
 class ShowPosts extends Component
 {
     use WithPagination;
-    public $posts, $title, $body, $post_id, $user_id;
+    // public $posts;
+    public $type;
+    public $title, $body, $post_id, $user_id;
 
     public $updateMode = false;
 
     public function render()
     {
+        //'posts' = Post::all()->paginate(5);
+        return view('livewire.show-posts', [
 
-        // $this->users = User::all();
-        //  $this->posts = Post::orderBy('id','desc')->get();
-        //   return view('livewire.show-posts');
+            'posts' => Post::orderBy('id', 'desc')->paginate(2)]);
 
-        // $this->posts = Post::orderBy('id', 'desc')->get();
-        // return view('livewire.show-posts');
+    }
+    public function mount()
+    {
+        $this->posts = \App\Models\Post::paginate(5);
 
-        return view('livewire.show-posts', [$posts => Post::orderBy('id', 'desc')->paginate(5)]);
-
-        //  return view('livewire.show-posts', [$posts => Post::paginate(10)]);
-
+        // $this->user_id = Auth::User()->id;
     }
 
     private function resetInputFields()
@@ -40,15 +42,18 @@ class ShowPosts extends Component
 
     public function store()
     {
-        $this->user_id = 'sdfasdf';
+        // $this->user_id = 'sdfasdf';
         $validatedDate = $this->validate([
 
             'title' => 'required',
 
             'body' => 'required',
+
             'user_id' => 'required',
 
         ]);
+
+        //dd($validatedDate);
 
         Post::create($validatedDate);
 
