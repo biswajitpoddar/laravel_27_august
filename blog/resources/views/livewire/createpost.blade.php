@@ -43,10 +43,11 @@
 
                         <label for="exampleFormControlInput2">Post Body</label>
 
-                        <input type="text" class="form-control" id="exampleFormControlInput2" wire:model="body" placeholder="Enter Body">
+                        <input type="text" class="form-control" id="exampleFormControlInput2" wire:model="body" value="dddd" placeholder="Enter Body">
 
                         @error('body') <span class="text-danger error">{{ $message }}</span>@enderror
-
+                        <input type="text" class="form-control" id="exampleFormControlInput3" wire:model="user_id"  value="aaaaa">
+                        @error('user_id') <span class="text-danger error">{{ $message }}</span>@enderror
                     </div>
 
                 </form>

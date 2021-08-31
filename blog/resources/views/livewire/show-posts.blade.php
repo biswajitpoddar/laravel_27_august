@@ -12,54 +12,9 @@
         </div>
     @endif
 
-    {{-- <table class="table table-bordered mt-5">
-
-        <thead>
-
-            <tr>
-
-                <th>No.</th>
-
-                <th>Name</th>
-
-                <th>Email</th>
-
-                <th>Action</th>
-
-            </tr>
-
-        </thead>
-
-        <tbody>
-
-            @foreach($posts as $value)
-
-            <tr>
-
-                <td>{{ $value->id }}</td>
-
-                <td>{{ $value->title }}</td>
-
-                <td>{{ $value->body }}</td>
-
-                <td>
-
-                <button data-toggle="modal" data-target="#updateModal" wire:click="edit({{ $value->id }})" class="btn btn-primary btn-sm">Edit</button>
-
-                <button wire:click="delete({{ $value->id }})" class="btn btn-danger btn-sm">Delete</button>
-
-                </td>
-
-            </tr>
-
-            @endforeach
 
 
-        </tbody>
-
-    </table> --}}
-
-    @foreach ( $posts as $value )
+    @foreach ($posts as $value)
     <div>{{$value->id}}  hello</div>
     @endforeach
     {{ $posts->links() }}
