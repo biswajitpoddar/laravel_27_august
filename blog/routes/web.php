@@ -25,4 +25,4 @@ require __DIR__ . '/auth.php';
 
 Route::view('users', 'livewire.home');
 
-Route::view('posts', 'livewire.show-posts');
+Route::view('posts', 'livewire.posts');
